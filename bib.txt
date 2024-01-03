@@ -1,0 +1,8 @@
+@misc{sun2024refining,
+      title={Refining Pre-Trained Motion Models}, 
+      author={Xinglong Sun and Adam W. Harley and Leonidas J. Guibas},
+      year={2024},
+      eprint={2401.00850},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
