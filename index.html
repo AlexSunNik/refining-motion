@@ -97,7 +97,7 @@
 
 		<!-- <img src="images/bev_vis.png" style="width:100%"> -->
 		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/m1.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
+		  <source src="videos/m1a.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
 		</video>
 		<p>We first run the pretrained motion model on a unlabeled video to generate some motion estimates.</p>
 			</div>
@@ -112,7 +112,7 @@
 
 		<!-- <img src="images/bev_vis.png" style="width:100%"> -->
 		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/m2.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
+		  <source src="videos/m2a.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
 		</video>
 		<p>Then we design a cycle-consistency based filter to filter those estimates down to "good" and "clean" trajectories. Specifically, cycle consistency assumes that if for a good track, if we track forwards in time, then start at the endpoint and track backwards in time, we should end up at the original startpoint.</p>
 			</div>
@@ -127,7 +127,7 @@
 
 		<!-- <img src="images/bev_vis.png" style="width:100%"> -->
 		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/m3.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
+		  <source src="videos/m3a.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
 		</video>
 		<p>In the next stage, we perform some augmentations on those good estimates, and finetune the same pretrained model to reproduce those estimations.</p>
 			</div>
@@ -138,22 +138,27 @@
 	  <div class="w3-center">
 	    <h2>Results</h2>
 	  </div>
-	  <p>Please see the paper for quantitative results and analysis. Here, we show visualizations of the performance.</p>
+	  <p>Please see the paper for detailed quantitative results and analysis. Here, we show some visualizations of the performance.</p>
 	  
 	  <div class="w3-center">
 	    <h3>Optical Flow</h3>
 	  </div>
 	  
 	  <div class="w3-card w3-padding">
-		<img src="images/drawsave.png" style="width:100%">
+		<img src="images/final_raftall.png" style="width:100%">
+	  </div>
+	  <p> Percent change in EPE after our refinement for each video in the MPI Sintel dataset compared with the pretrained RAFT model. Negative value denotes improvement (i.e., error decreasing)</p>
+
+	  <div class="w3-card w3-padding">
+		<img src="images/draw1_correct.png" style="width:100%">
 	  </div>
 
 	  <div class="w3-card w3-padding">
-		<img src="images/draw2.png" style="width:100%">
+		<img src="images/draw2_correct.png" style="width:100%">
 	  </div>
 
 	  <div class="w3-card w3-padding">
-		<img src="images/draw3.png" style="width:100%">
+		<img src="images/draw3_correct.png" style="width:100%">
 	  </div>
 	  
 	  <p>Our approach refines the flows by completing missing objects and cleaning noisy tracks.</p>
@@ -161,6 +166,12 @@
 	  <div class="w3-center">
 	    <h3>Multi-frame Tracking</h3>
 	  </div>
+
+	  <div class="w3-card w3-padding">
+		<img src="images/davis_final.png" style="width:100%">
+	  </div>
+	  <p> Performance change in δ after our refinement for each of the video in the TapVid-DAVIS dataset compared with the baseline pretrained PIPs model. Positive value denotes improvement (i.e., accuracy increasing)</p>
+
 
 	  <div class="w3-center">
 	    <div class="w3-card">
@@ -170,7 +181,7 @@
 
 		<!-- <img src="images/bev_vis.png" style="width:100%"> -->
 		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/r1.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
+		  <source src="videos/r1a.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
 		</video>
 		<p>Tracking a point on the background, original tracker is stuck on the moving car whereas our refinement fixes the error.</p>
 			</div>
@@ -185,7 +196,7 @@
 
 		<!-- <img src="images/bev_vis.png" style="width:100%"> -->
 		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/r2.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
+		  <source src="videos/r2a.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
 		</video>
 		<p>Tracking a point on the dancer's leg, original tracker loses the target in the middle whereas our refinement helps to keep the trajectory to the end.</p>
 			</div>
@@ -201,7 +212,7 @@
 
 		<!-- <img src="images/bev_vis.png" style="width:100%"> -->
 		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/r3.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
+		  <source src="videos/r3a.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
 		</video>
 		<p>Tracking a point on the dog, original tracker is stuck on the standing person whereas our refinment corrects this mistake.</p>
 			</div>
